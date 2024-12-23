@@ -57,7 +57,7 @@ else:
                             min_value=date(1950, 1, 1),
                             max_value=date(2020, 12, 31),
                             value=date(2000, 1, 1))
-        search_button = st.button('Cari')
+        search_button = st.button('Search')
 
     if search_button:
         if not user_id or not dob:
