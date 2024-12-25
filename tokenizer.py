@@ -19,7 +19,7 @@ def get_current_and_previous_month():
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv('https://raw.github.com/prtmaars/DCP-Addons-Tokenizer/3eb11d488462d100745e9cbfaa91e129b588fe81/tokenizer.csv', 
+        df = pd.read_csv('https://raw.github.com/prtmaars/DCP-Addons-Tokenizer/637ccff5e16e4d0eb55706029594ddccb4097c8c/tokenizer.csv', 
                          sep=',',  
                          dtype=str, 
                          na_filter=False)
