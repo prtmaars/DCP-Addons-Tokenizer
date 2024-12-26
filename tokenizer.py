@@ -10,17 +10,17 @@ current_year = "2024"
 previous_month = "November"
 previous_year = "2024"
 
-"""def get_current_and_previous_month():
-    now = datetime.now()
-    current_month = now.strftime("%B")
-    current_year = now.year
-    if now.month == 1:
-        previous_month = "Desember"
-        previous_year = now.year - 1
-    else:
-        previous_month = datetime(now.year, now.month - 1, 1).strftime("%B")
-        previous_year = now.year
-    return current_month, previous_month, current_year, previous_year"""
+#def get_current_and_previous_month():
+#    now = datetime.now()
+#    current_month = now.strftime("%B")
+#    current_year = now.year
+#    if now.month == 1:
+#        previous_month = "Desember"
+#        previous_year = now.year - 1
+#    else:
+#        previous_month = datetime(now.year, now.month - 1, 1).strftime("%B")
+#        previous_year = now.year
+#    return current_month, previous_month, current_year, previous_year
 
 @st.cache_data
 def load_data():
