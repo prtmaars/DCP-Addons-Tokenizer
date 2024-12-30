@@ -57,7 +57,7 @@ if df.empty:
 else:
     with st.container():
         user_id = st.text_input('Nomor User / *User ID*', 
-                                placeholder="1807101",
+                                placeholder="1807111",
                                 help="Nomor User bisa dilihat di email pengiriman addons / *User ID can be seen in the addons delivery email*")
         dob = st.date_input('Tanggal Lahir / *Date of Birth*', 
                             min_value=date(1950, 1, 1),
@@ -94,6 +94,8 @@ else:
                     # Token berdasarkan status
                     token_current = result['TOKEN'].values[0] if status not in ['non-active', 'blacklist'] else '-'
                     token_previous = result['TOKEN_PREV'].values[0] if status not in ['non-active', 'blacklist'] else '-'
+                    andro_current = result['ANDRO'].values[0] if status not in ['non-active', 'blacklist'] else '-'
+                    andro_previous = result['ANDRO_PREV'].values[0] if status not in ['non-active', 'blacklist'] else '-'
 
                     # Pesan informasi tambahan
                     information = ""
@@ -114,10 +116,16 @@ else:
                     <div style='background-color:{'#D8D8D8'};color:black;padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>{result['USER_ID'].values[0]}</div>
                     <div style='font-weight:normal;'>Status User / <i>User Status</i></div>  
                     <div style='background-color:{color};color:black;padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>{status.upper()}</div>
-                    <div style='font-weight:normal;'>Token {current_month} {current_year}</div>  
+                    ### Token {current_month} {current_year}
+                    <div style='font-weight:normal;'>TRS2022, TRS2019, T:ANE</div>  
                     <div style='background-color:{'#D8D8D8'};color:black;padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>{token_current}</div>
-                    <div style='font-weight:normal;opacity: 0.5;'>Token {previous_month} {previous_year}</div>                      
+                    <div style='font-weight:normal;'>TS2012, TS2010, TS2009, TSAndroid</div>  
+                    <div style='background-color:{'#D8D8D8'};color:black;padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>{andro_current}</div>
+                    ### Token {previous_month} {previous_year}
+                    <div style='font-weight:normal;opacity: 0.5;'>TRS2022, TRS2019, T:ANE</div>                      
                     <div style='background-color:rgba(191, 191, 191, 0.5);color:rgba(0, 0, 0, 0.5);padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;opacity:0.5;'>{token_previous}</div>
+                    <div style='font-weight:normal;opacity: 0.5;'>TS2012, TS2010, TS2009, TSAndroid</div>                      
+                    <div style='background-color:rgba(191, 191, 191, 0.5);color:rgba(0, 0, 0, 0.5);padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;opacity:0.5;'>{andro_previous}</div>
                     {information}
                     """, unsafe_allow_html=True)
             
