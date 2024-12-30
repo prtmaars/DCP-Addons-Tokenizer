@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_copy_to_clipboard import st_copy_button
 import pandas as pd
 from datetime import datetime, date
 
@@ -118,38 +117,14 @@ else:
                     <div style='font-weight:normal;'>Status User / <i>User Status</i></div>  
                     <div style='background-color:{color};color:black;padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>{status.upper()}</div>
                     <h2 style='font-size:1.8em;'>Token {current_month} {current_year}</h2>
-                    <div style='display:flex;align-items:center;justify-content:space-between;'>
-                        <div style='font-weight:normal;'>TRS2022, TRS2019, T:ANE</div>  
-                        <button onclick="navigator.clipboard.writeText('{token_current}')"
-                                style="background-color:#4CAF50;color:white;padding:5px 10px;border:none;border-radius:5px;cursor:pointer;">
-                            Copy
-                        </button>
-                    </div>
+                    <div style='font-weight:normal;'>TRS2022, TRS2019, T:ANE</div>  
                     <div style='background-color:{'#D8D8D8'};color:black;padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>{token_current}</div>
-                    <div style='display:flex;align-items:center;justify-content:space-between;'>
-                        <div style='font-weight:normal;'>TS2012, TS2010, TS2009, TSAndroid</div>  
-                        <button onclick="navigator.clipboard.writeText('{andro_current}')"
-                                style="background-color:#4CAF50;color:white;padding:5px 10px;border:none;border-radius:5px;cursor:pointer;">
-                            Copy
-                        </button>
-                    </div>
+                    <div style='font-weight:normal;'>TS2012, TS2010, TS2009, TSAndroid</div>  
                     <div style='background-color:{'#D8D8D8'};color:black;padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>{andro_current}</div>
-                    <h2 style='font-size:1.8em;opacity: 0.5;'>Token {previous_month} {previous_year}</h2>
-                    <div style='display:flex;align-items:center;justify-content:space-between;'>
-                        <div style='font-weight:normal;opacity: 0.5;'>TRS2022, TRS2019, T:ANE</div>                      
-                        <button onclick="navigator.clipboard.writeText('{token_previous}')"
-                                style="background-color:#BFBFBF;color:white;padding:5px 10px;border:none;border-radius:5px;cursor:pointer;">
-                            Copy
-                        </button>
-                    </div>
+                    <h2 style='font-size:1.8em;'>Token {previous_month} {previous_year}</h2>
+                    <div style='font-weight:normal;opacity: 0.5;'>TRS2022, TRS2019, T:ANE</div>                      
                     <div style='background-color:rgba(191, 191, 191, 0.5);color:rgba(0, 0, 0, 0.5);padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;opacity:0.5;'>{token_previous}</div>
-                    <div style='display:flex;align-items:center;justify-content:space-between;'>
-                        <div style='font-weight:normal;opacity: 0.5;'>TS2012, TS2010, TS2009, TSAndroid</div>                      
-                        <button onclick="navigator.clipboard.writeText('{andro_previous}')"
-                                style="background-color:#BFBFBF;color:white;padding:5px 10px;border:none;border-radius:5px;cursor:pointer;">
-                            Copy
-                        </button>
-                    </div>
+                    <div style='font-weight:normal;opacity: 0.5;'>TS2012, TS2010, TS2009, TSAndroid</div>                      
                     <div style='background-color:rgba(191, 191, 191, 0.5);color:rgba(0, 0, 0, 0.5);padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;opacity:0.5;'>{andro_previous}</div>
                     {information}
                     """, unsafe_allow_html=True)
