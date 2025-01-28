@@ -102,16 +102,16 @@ else:
                     information = ""
                     if status == 'non-active':
                         information = information + "<div style='font-weight:normal;'>Informasi / <i>Information</i></div>"  
-                        information = information + "<div style='background-color:#FF6666;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>Mohon lakukan registrasi ulang terlebih dahulu, hubungi admin.</div>"
-                        information = information + "<div style='background-color:#FF6666;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'><i>Please re-register first, contact admin</i></div>"
+                        information = information + "<div style='background-color:#FFD03B;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>Mohon lakukan registrasi ulang terlebih dahulu, hubungi admin.</div>"
+                        information = information + "<div style='background-color:#FFD03B;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'><i>Please re-register first, contact admin</i></div>"
                     elif status == 'blacklist':
                         information = information + "<div style='font-weight:normal;'>Informasi / <i>Information</i></div>"  
                         information = information + "<div style='background-color:#FF6666;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>User telah diblacklist, token tidak tersedia.</div>"
                         information = information + "<div style='background-color:#FF6666;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'><i>User has been blacklisted, token is not available.</i></div>"
                     elif status == 'suspended':
                         information = information + "<div style='font-weight:normal;'>Informasi / <i>Information</i></div>"  
-                        information = information + "<div style='background-color:#FF6666;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>User ditangguhkan, terindikasi melakukan pelanggaran.</div>"
-                        information = information + "<div style='background-color:#FF6666;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'><i>User suspended, suspected of committing violation.</i></div>"
+                        information = information + "<div style='background-color:#FFD03B;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>User ditangguhkan, terindikasi melakukan pelanggaran.</div>"
+                        information = information + "<div style='background-color:#FFD03B;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'><i>User suspended, suspected of committing violation.</i></div>"
 
                     # Tampilkan detail pengguna
                     st.markdown("---")
@@ -121,6 +121,7 @@ else:
                     <div style='background-color:{'#D8D8D8'};color:black;padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>{result['USER_ID'].values[0]}</div>
                     <div style='font-weight:normal;'>Status User / <i>User Status</i></div>  
                     <div style='background-color:{color};color:black;padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>{status.upper()}</div>
+                    {information}
                     <h2 style='font-size:1.8em;'>Token {current_month} {current_year}</h2>
                     <div style='font-weight:normal;'>TRS2022, TRS2019, T:ANE</div>  
                     <div style='background-color:{'#D8D8D8'};color:black;padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>{token_current}</div>
@@ -131,7 +132,6 @@ else:
                     <div style='background-color:rgba(191, 191, 191, 0.5);color:rgba(0, 0, 0, 0.5);padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;opacity:0.5;'>{token_previous}</div>
                     <div style='font-weight:normal;opacity: 0.5;'>TS2012, TS2010, TS2009, TSAndroid</div>                      
                     <div style='background-color:rgba(191, 191, 191, 0.5);color:rgba(0, 0, 0, 0.5);padding:5px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;opacity:0.5;'>{andro_previous}</div>
-                    {information}
                     """, unsafe_allow_html=True)
             
             except Exception as e:
