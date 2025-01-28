@@ -87,15 +87,16 @@ else:
                         'blacklist': '#FF6666',
                         'admin': '#87CEEB',
                         'associate': '#D1D1F6',
-                        'non-active': '#D8D8D8'
+                        'non-active': '#D8D8D8',
+                        'suspended': '#FFD03B'
                     }
                     color = status_colors.get(status, '#D8D8D8')  # Default warna abu-abu jika tidak ditemukan
 
                     # Token berdasarkan status
-                    token_current = result['TOKEN'].values[0] if status not in ['non-active', 'blacklist'] else '-'
-                    token_previous = result['TOKEN_PREV'].values[0] if status not in ['non-active', 'blacklist'] else '-'
-                    andro_current = result['ANDRO'].values[0] if status not in ['non-active', 'blacklist'] else '-'
-                    andro_previous = result['ANDRO_PREV'].values[0] if status not in ['non-active', 'blacklist'] else '-'
+                    token_current = result['TOKEN'].values[0] if status not in ['non-active', 'blacklist', 'suspended'] else '-'
+                    token_previous = result['TOKEN_PREV'].values[0] if status not in ['non-active', 'blacklist', 'suspended'] else '-'
+                    andro_current = result['ANDRO'].values[0] if status not in ['non-active', 'blacklist', 'suspended'] else '-'
+                    andro_previous = result['ANDRO_PREV'].values[0] if status not in ['non-active', 'blacklist', 'suspended'] else '-'
 
                     # Pesan informasi tambahan
                     information = ""
@@ -107,6 +108,10 @@ else:
                         information = information + "<div style='font-weight:normal;'>Informasi / <i>Information</i></div>"  
                         information = information + "<div style='background-color:#FF6666;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>User telah diblacklist, token tidak tersedia.</div>"
                         information = information + "<div style='background-color:#FF6666;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'><i>User has been blacklisted, token is not available.</i></div>"
+                    elif status == 'suspended':
+                        information = information + "<div style='font-weight:normal;'>Informasi / <i>Information</i></div>"  
+                        information = information + "<div style='background-color:#FF6666;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'>User ditangguhkan, terindikasi melakukan pelanggaran.</div>"
+                        information = information + "<div style='background-color:#FF6666;color:black;padding:10px;border-radius:5px;text-align:center;margin-top:5px;margin-bottom:12px;'><i>User suspended, suspected of committing violation.</i></div>"
 
                     # Tampilkan detail pengguna
                     st.markdown("---")
