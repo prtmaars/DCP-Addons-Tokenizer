@@ -4,11 +4,11 @@ from datetime import datetime, date
 
 st.set_page_config(page_title="DCP Addons Tokenizer", layout="centered")
 
-current_month = "January"
+current_month = "February"
 current_year = "2025"
 
-previous_month = "December"
-previous_year = "2024"
+previous_month = "January"
+previous_year = "2025"
 
 #def get_current_and_previous_month():
 #    now = datetime.now()
@@ -25,7 +25,7 @@ previous_year = "2024"
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv('https://raw.github.com/prtmaars/DCP-Addons-Tokenizer/d4d203b6d2f907805062b23d8502f1b96c4678a9/tokenizer.csv', 
+        df = pd.read_csv('https://raw.github.com/prtmaars/DCP-Addons-Tokenizer/870a97c86630c8ae7ec80b6ac1450a7f6f0b8430/tokenizer.csv', 
                          sep=',',  
                          dtype=str, 
                          na_filter=False)
