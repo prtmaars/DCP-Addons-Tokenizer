@@ -4,10 +4,10 @@ from datetime import datetime, date
 
 st.set_page_config(page_title="DCP Addons Tokenizer", layout="centered")
 
-current_month = "February"
+current_month = "March"
 current_year = "2025"
 
-previous_month = "January"
+previous_month = "February"
 previous_year = "2025"
 
 #def get_current_and_previous_month():
