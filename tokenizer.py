@@ -25,7 +25,7 @@ previous_year = "2025"
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv('https://raw.github.com/prtmaars/DCP-Addons-Tokenizer/0443560c4e46de4e4f42fe302f4c1393d1a69f38/tokenizer.csv', 
+        df = pd.read_csv('https://raw.github.com/prtmaars/DCP-Addons-Tokenizer/4a2770f120dfcd6f854dfe9c43bb246ebcaca177/tokenizer.csv', 
                          sep=',',  
                          dtype=str, 
                          na_filter=False)
